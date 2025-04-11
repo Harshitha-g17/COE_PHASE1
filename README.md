@@ -17,7 +17,7 @@ else:
     print("fail")
 
 
-#GENERATING ELECTRIC BILL BASED ON UNITS
+#GENERATING ELECTRICITY BILL BASED ON UNITS
 
 prev=int(input("enter previous value"))
 pres=int(input("enter present value"))
