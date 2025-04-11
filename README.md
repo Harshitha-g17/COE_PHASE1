@@ -1,6 +1,6 @@
 # COE_PHASE1
 
-# BASED ON EXAM SCORE CALCULATING TOTAL SCORE AND GRADE
+#BASED ON EXAM SCORE CALCULATING TOTAL SCORE AND GRADE
 
 project=int(input("enter project score"))
 external=int(input("enter external score"))
