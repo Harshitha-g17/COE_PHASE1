@@ -1,6 +1,7 @@
 # COE_PHASE1
 
 # BASED ON EXAM SCORE CALCULATING TOTAL SCORE AND GRADE
+
 project=int(input("enter project score"))
 external=int(input("enter external score"))
 internal=int(input("enter internal score"))
@@ -17,6 +18,7 @@ else:
 
 
 #GENERATING ELECTRIC BILL BASED ON UNITS
+
 prev=int(input("enter previous value"))
 pres=int(input("enter present value"))
 units=prev-pres
@@ -36,6 +38,7 @@ print(bill)
 
 
 #GENERATING BILL BASED ON FESTIVAL AND NON-FESTIVAL DAY OFFERS
+
 meal_type=int(input("enter your meal type 1.veg 2.non-veg 3.combo"))
 quantity=int(input("enter the quantity"))
 festival=input("enter festival 1.yes 2.no")
@@ -67,6 +70,7 @@ bill=bill+(bill*5)/100
 print(bill)
     
 #EDUCATION – SCHLORSHIP ELIGIBILITY EVALUATOR
+
 student_name=input()
 percentage_10=int(input())
 percentage_12=int(input())
