@@ -1,0 +1,66 @@
+# DAY-2
+
+#conversions
+a=9
+b=9.0
+c="123"
+print(int(b))
+print(int(c))
+print(float(a))
+print(float(c))
+print(str(a))
+print(str(b))
+
+
+#ATM
+#Accept withdraw amount and print number of notes
+#500,200,100
+
+amount=int(input("enter the withdraw amount:"))  #800
+five=0
+two=0
+one=0
+if amount%100==0:
+    if amount>=500:
+        five=amount//500
+        print("500 rupees notes are:",five)
+        amount=amount-(five*500)
+    if amount>=200:
+        two=amount//200
+        print("200 rupees notes are:",two)
+        amount=amount-(two*200)
+    if amount>=100:
+        one=amount//100
+        print("100 rupees notes are:",one)
+else:
+    print("Please enter multiple of 100 only")
+
+
+
+TASK 1:
+"""Accept basic salary and find gross salary
+ Gross salary=basic salary +DA + HRA
+ HRA -house rent alavance   DA- 
+ if basic salary is less than 20000 then
+  HRA is 76% and DA is 78% on basic salary
+ if basic salary is between 20000 to 30000 then
+   HRA is 79% and DA is 82% on basic salary
+ if basic salary is more than 30000 then
+  HRA is 85% and DA is 89% on basic salary"""
+
+
+salary=int(input("enter the salary:"))
+if salary<20000:
+    hra=(salary*76)//100
+    da=(salary*78)//100
+    
+elif salary<30000:
+     hra=(salary*79)//100
+     da=(salary*82)//100
+     
+else:
+    hra=(salary*85)//100
+    da=(salary*89)//100
+Gross_salary=salary + da + hra
+print(hra,da)
+print("Gross salary:",Gross_salary)    
