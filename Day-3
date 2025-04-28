@@ -1,0 +1,225 @@
+#find the no.of digits
+num=5632 
+count=0
+while num!=0:
+    num=num//10
+    count=count+1
+print(count)    
+
+
+
+#print number of even digits and no.of odd digits
+
+num=783781
+count_o=0
+count_e=0
+while num!=0:
+    if num%2==0:
+        
+        count_e=count_e+1
+    else:
+        
+        count_o=count_o+1
+    num=num//10    
+print(count_e) 
+print(count_o)
+
+
+
+
+
+#finding the sum of odd and even
+
+num=765346
+count_o=0
+count_e=0
+sum=0
+total=0
+while num!=0:
+    rem=num%10
+    if rem%2==0:
+        sum=sum+rem
+    else:
+        total=total+rem
+    num=num//10    
+print(sum)
+print(total)
+
+
+
+
+
+#Checking whether a number is prime or not prime using while loop
+
+num=int(input("enter the number"))
+i=1
+count=0
+
+while i<=num//2:
+    if num%i==0:
+        count=count+1
+    i=i+1
+
+if count==1:
+    print("prime")
+else:
+    print("not prime")
+
+
+#prime number using for loop
+n=100
+for i in range(1,n+1):
+    count=0
+    for j in range(1,i):
+        if i%j==0:
+            count+=1
+    if count==1:
+        print(i)
+
+
+
+#prime number between 1-100 using while loop
+n=1
+while n<=100:
+    num=n
+    i=1
+    count=0
+    while i<=num//2:
+        if num%i==0:
+            count=count+1
+        i=i+1
+
+    if count==1:
+        print(num)
+    n=n+1    
+
+
+
+#WAP to accept start and stop value and print between numbers
+start=int(input("Enter the start value:"))
+end=int(input("Enter the end value:"))
+i=1
+while i<=end:
+    if i>=start:
+        print(i)
+    i+=1
+
+
+#WAP to accept number and print number of factors
+n=int(input("Enter the number:"))
+i=1
+count=0
+while i<=n:
+    if n%i==0:
+        count+=1
+    i+=1
+print(f"Number of factors of {n} is {count}")
+
+
+
+#WAP to print reverse of a given number
+num=int(input("Enter the number:"))
+reverse_num=0
+while num!=0:
+    rem=num%10
+    reverse_num=reverse_num*10+rem
+    num//=10
+print(reverse_num)
+
+
+#WAP to print number of digits of a number given number
+num=int(input("Enter the number:"))
+c=0
+while num!=0:
+    rem=num%10
+    c+=1
+    num//=10
+print(c)
+
+
+
+#WAP to print sum of first and last digits of a given number
+num=int(input("Enter the number:"))
+sum=0
+n=str(num)
+length=len(n)
+print(length)
+for i in range(1,length+1):
+    if i==1 and i==length+1:
+        sum+=i
+print(sum)
+
+
+
+#Check given number is amstrong or not
+num=int(input("Enter the number:"))
+sum=0
+n=str(num)
+length=len(n)
+temp=num
+while num>0:
+    rem=num%10
+    sum=sum+rem**length
+    num//=10
+if temp==sum:
+    print("Amstrong")
+else:
+    print("Not amstrong")
+
+
+
+#Check given number is strong or not
+num=int(input("Enter the number:"))
+sum=0
+temp=num
+while num>0:
+    rem=num%10
+    f=1
+    i=1
+    while i<=rem:
+        f=f*i
+        i+=1
+    sum+=f
+    num//=10
+print(sum)
+if temp==sum:
+    print("Strong")
+else:
+    print("weak")
+
+
+#counting no.of digits ,no.of alphabets ,no.of vowels ,no.of special characters ,no.of space
+str="Hi hello 7656 this ^%$^# is Nagul"
+str1=str.lower()
+count_v=0
+count_d=0
+count_s=0
+count_sp=0
+count_a=0
+for i in str1:
+    if (i=='a' or i=='e' or i=='i' or i=='o' or i=='u'):
+        count_v=count_v+1
+    elif(i.isdigit()):
+        count_d=count_d+1
+    elif(i.isalpha()):
+        count_a=count_a+1
+    elif(i==" "):
+        count_sp=count_sp+1
+    else:
+        count_s=count_s+1
+       
+print(count_v)
+print(count_d)
+print(count_a+count_v)
+print(count_sp)
+print(count_s)
+
+
+#startswith
+#endswith
+str="Hi hello this is Nagul"
+print(str.startswith("Hi"))
+print(str.startswith("Hi"))
+print(str.startswith("Hello"))
+print(str.endswith('Nagul'))
+print(str.endswith("ul"))
