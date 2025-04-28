@@ -1,0 +1,57 @@
+#Problem using Streamlit 
+
+#Calculate the simple interest
+import streamlit as sp
+sp.title("simple interest calculator")
+p=sp.number_input("enter the principle",min_value=1000,step=100)
+t=sp.number_input("enter the years",min_value=0,step=1)
+r=sp.number_input("enter the interest",min_value=1,step=1)
+if sp.button("result"):
+    sp.write("total:",p+((p*t*r)/100))
+
+
+#CAFETARIA
+import streamlit as ca
+ca.title("CAFETERIA")
+
+tea=ca.number_input("choose Tea",min_value=1,step=1)
+ca.text("The cost of the tea is 20/-")
+
+coffee=ca.number_input("choose coffee",min_value=1,step=1)
+ca.text("The cost of the coffee is 25/-")
+
+biscuit=ca.number_input("choose biscuits",min_value=1,step=1)
+ca.text("The cost of the biscuits is 15/-")
+
+samosa=ca.number_input("choose samosa",min_value=1,step=1)
+ca.text("The cost of the samosa is 30/-")
+
+if ca.button("cost"):
+    ca.write("total cost of items",(tea*20)+(coffee*25)+(biscuit*15)+(samosa*30))
+    ca.text("COME BACK AGAIN FOR THE GOOD FOOD")
+
+
+
+
+#BMI calculator
+import streamlit as st
+st.title("BMI CALCULATOR")
+age=st.number_input("Enter your age:",min_value=1,step=1)
+st.radio("Gender",("Male","Female"))
+height=st.number_input("Enter your height in meters:",min_value=1,step=1)
+weight=st.number_input("Enter your weight in kg:",min_value=1,step=1)
+st.write("1.Underweight: BMI less than 18.5")
+st.write("2.Normal weight: BMI from 18.5 to 24.9")
+st.write("3.Overweight: BMI from 25 to 29.9")
+st.write("4.Obesity : BMI more than 30")
+bmi=(weight)/height**2
+if st.button("Calculate"):
+    st.write("Your BMI is:",bmi)
+    if bmi<18.5:
+        st.write("You are Underweight")
+    elif bmi<25:
+        st.write("You are Normal weight")
+    elif bmi<30:
+        st.write("You are Overweight")
+    else:
+        st.write("You are Obesity")
