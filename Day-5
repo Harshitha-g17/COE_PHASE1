@@ -1,0 +1,89 @@
+#Simulate basic ATM operations with validation and transaction rules.
+class Bank:
+    pin=1311
+    pincount=1
+    acbal=10000
+    wcount=0
+    def viewOptions(self):
+        print("1. Deposit ")
+        print("2. Withdarw ")
+        print("3. Bal Enquiry ")
+        print("0. EXIT ")
+        opt=int(input("Choose your option:"))
+        if opt==1:
+            obj.deposit()
+            obj.confirm()
+        elif opt==2:
+            if self.wcount<3:
+                obj.withdraw()
+                obj.confirm()
+            else:
+                print("Withdraw limit is over, please try after 24 hrs")
+        
+    
+    def validate(self):
+        pin=int(input("Enter your pin : "))
+        if self.pin==pin:
+           obj.viewOptions()
+        else:
+            self.pincount+=1
+            if self.pincount<=3:
+                print("Invalid pin, please try again")
+                obj.validate()
+            else:
+                print("Your card is blocked for the day")
+    def deposit(self):
+        amt=int(input("Enter deposit amount : "))
+        if amt%100==0:
+            if amt<=50000:
+                self.acbal+=amt
+                self.count_notes(amt)
+                print("Avaialble bal is : ",self.acbal)
+            else:
+                print("Transaction limit is 20000 only")
+                
+        else:
+            print("Please enter multiples of 100 ")
+        
+    def confirm(self):
+        opt=int(input(" 1.Continue  \n 0. EXIT \n Enter choice to continue or exit:"))
+        if opt==1:
+                obj.viewOptions()
+        else:
+            print("Thank you, Visit again ")
+    def withdraw(self):
+        amt=int(input("Enter withdraw amount : "))
+        if amt%100==0:
+            if amt<=self.acbal:
+                if amt<=20000:
+                    self.acbal-=amt
+                    self.wcount+=1
+                    self.count_notes(amt)
+                    print("Avalilable bal is : ",self.acbal)
+                        
+                else:
+                    print("Transaction limit is 20000 only")
+            else:
+                print("insuffient fund ")
+        else:
+            print("Please enter multiples of 100 only")
+
+    def count_notes(self,amount):
+        five=0
+        two=0
+        one=0
+        if amount%100==0:
+            if amount>=500:
+                five=amount//500
+                print("500 rupees notes are :",five)
+                amount=amount-(five*500)
+            if amount>=200:
+                two=amount//200
+                print("200 rupees notes are :",two)
+                amount=amount-(two*200)
+            if amount>=100:
+                one=amount//100
+                print("100 rupees notes are :",one)
+    
+obj=Bank()
+obj.validate()
