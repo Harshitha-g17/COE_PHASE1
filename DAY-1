@@ -82,3 +82,16 @@ elif( percentage_ug>70 and family_income<500000):
     print("Partial Scholarship is eligible by",student_name)
 else:
     print("not eligible for scholarship")
+
+
+
+#Government – Ration Card Eligibility Checker
+fam_size=int(input("Enter size of family:"))
+income=int(input("Enter annual income"))
+area=input("Enter area rural/urban:")
+if area=='rural' and income<250000 and fam_size>3:
+print("Eligible for ration card")
+elif income<200000 and fam_size>4:
+print("Eligible for ration card")
+else:
+print("Not eligible for ration card"
