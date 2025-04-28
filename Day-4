@@ -1,0 +1,65 @@
+#Accessing name,mobile number,gmail,password of a student
+#Checking given details according to given conditions
+name=input("enter the name")
+mobile=input("enter the mobile number")
+email=input("enter the email id")
+password=input("enter the password")
+
+if name.isalpha():
+    if len(name)>3 and len(name)<15:
+        print(name)
+    else:
+        print("Enter the nam in valid length")
+else:
+    print("Enter the alphabets only")
+
+
+if len(mobile)==10:
+    if mobile.isdigit():
+        if mobile.startswith('9') or mobile.startswith('8') or mobile.startswith('7') or mobile.startswith('6'):
+            print(mobile)
+        else:
+            print("Enter the mobile number that start with 9 or 8 or 7 or 6 ")
+    else:
+        print("enter digits only")
+else:
+    print("enter 10 digits")
+
+
+if email[0].isalnum():
+    if len(email)>=5 and len(email)<=20:
+        if email.endswith('.com') or email.endswith(".in"):
+            print(email)
+        else:    
+            print("enter email that ends with .com or .in")
+    else:
+        print("enter tha email lenght between 5 or 20")
+else:
+    print("enter valid email")
+
+
+
+if len(password)>=8 and len(password)<=20:
+    count_l=0
+    count_u=0
+    count_d=0
+    count_s=0
+    for i in password:
+        if i.islower():
+            count_l=count_l+1
+        elif i.isupper():
+            count_u=count_u+1
+        elif i.isdigit():
+            count_d=count_d+1
+        else:
+            count_s=count_s+1
+    if count_l>=1 and count_u>=1 and count_d>=1 and count_s>=1:
+        print(password)
+    else:
+        print("enter the valid password")
+else:
+    print("enter the password lenght between 8 and 20")
+    
+            
+
+
